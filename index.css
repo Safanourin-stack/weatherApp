@@ -1,0 +1,47 @@
+body{
+  background-image: url(images/ddd.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+ opacity: 0.8;
+ 
+  margin: 0px;
+}
+.right{
+  background-color: rgba(181, 174, 174, 0.06);
+  
+}
+
+.let{
+  display: flex;
+  align-items:last baseline;
+  font-weight: 800;
+  color: rgb(233, 227, 227);
+
+}
+.hed1{
+  font-size: 100px;
+}
+
+.sp{
+  margin-left:13px ;
+}
+.form{
+  outline: none;
+  border: none; 
+background:none ;
+ color: azure;
+
+}
+.bo{
+  color: rgb(246, 240, 240);
+ border: solid 1px rgb(144, 140, 140);
+}
+input::placeholder{
+  color:rgb(229, 219, 219);
+  font-weight: 500;
+}
+@media(max-width:500) {
+  .hed1{
+    font-size: 50px;
+  }
+}

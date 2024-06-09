@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./index.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="mt-0 w-100 container-fluid text-white " >
+    <div class="row " >
+
+      <div class=" col-lg-6 col-md-12 col-sm-12 col-12  left     " >
+
+        <div class="ms-5 mt-5  ">
+
+          <h4 class="mt-5">The weather</h4>
+        </div>
+        <div class="" >
+
+
+          <div class=" let mb-5 ms-2 " style="display: flex;">
+
+            <div class="sp   ">
+              <h1 class=" hed1 ">16&deg; </h1>
+            </div>
+            <div class="sp">
+              <h2 class="h2 hed2 mt-2">LONDON</h2>
+              <div class="" style="margin-top: px;"><span id="time">00</span> -
+                <span id='time1'>00</span> -
+                <span id='time2'>00</span>
+              </div>
+            </div>
+            <div class="sp">
+
+              <i class="fa-brands fa-soundcloud fa-4x" style="color: #ffffff;"></i>
+              <div class="mt-1" >
+                <h6 style="font-weight: 800;">partialy cloudy</h6>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class=" col-lg-6 col-md-12 col-sm-12 col-12  right">
+        <div class=" p-4  my-4 w-100 ">
+           <input type="text" class="form " placeholder="Search Location..."><br>
+          <hr class="mt-2 mb-5 bo">
+          <h6 class="mt-5">Kochi</h6>
+          <h6 class="mt-5">Calicut</h6>
+          <h6 class="my-5">Delhi</h6>
+          <br>
+          <hr class="bo mb-5">
+          <h6 style="font-weight: 800;" class="mt-4">Weather Details</h6>
+          <div class="mt-5" style="font-weight: 600;">
+
+            <div class="d-flex justify-content-between">
+              <div>Cloudy</div>
+              <div>00%</div>
+            </div>
+            <div class="d-flex justify-content-between mt-5">
+              <div>Humidity</div>
+              <div>00%</div>
+            </div>
+            <div class="d-flex justify-content-between mt-5">
+              <div>Wind</div>
+              <div>00%</div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <script>
+    time = document.querySelector('#time')
+    time1 = document.querySelector('#time1')
+    time2 = document.querySelector('#time2')
+
+    t = new Date().getUTCDate()
+    t1 = new Date().getUTCMonth() + 1
+    t2 = new Date().getUTCFullYear()
+
+    if (t < 10) {
+      time.innerHTML = '0' + t
+    }
+    else {
+      time.innerHTML=t
+    }
+
+    if (t1< 10) {
+      time1.innerHTML = '0' + t1
+    }
+    else {
+      time1.innerHTML=t1
+    }
+
+    if (t2 < 10) {
+      time2.innerHTML = '0' + t2
+    }
+    else {
+      time2.innerHTML=t2
+    }
+
+  </script>
+</body>
+
+</html>
