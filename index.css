@@ -3,8 +3,9 @@ body{
   background-repeat: no-repeat;
   background-size: cover;
  opacity: 0.8;
- 
   margin: 0px;
+  overflow-x: hidden;
+ 
 }
 .right{
   background-color: rgba(181, 174, 174, 0.06);
@@ -13,17 +14,22 @@ body{
 
 .let{
   display: flex;
-  align-items:last baseline;
-  font-weight: 800;
+ align-items: last baseline;
+ justify-content: center;
+  font-weight: 500;
   color: rgb(233, 227, 227);
 
 }
 .hed1{
-  font-size: 100px;
+  font-size: 120px;
+}
+.hed2{
+  font-size: 20px;
 }
 
 .sp{
   margin-left:13px ;
+ 
 }
 .form{
   outline: none;
@@ -40,8 +46,19 @@ input::placeholder{
   color:rgb(229, 219, 219);
   font-weight: 500;
 }
-@media(max-width:500) {
+
+@media( max-width:500px ) {
+
   .hed1{
-    font-size: 50px;
+
+    font-size: 36px;
+    font-weight: 100;
   }
+  .hed2{
+
+    font-size: 8px;
+    font-weight: 100;
+  }
+  
+
 }

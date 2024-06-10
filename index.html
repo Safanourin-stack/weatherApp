@@ -14,35 +14,35 @@
 </head>
 
 <body>
-  <div class="mt-0 w-100 container-fluid text-white " >
-    <div class="row " >
+  <div class="mt-0 w-100 container-fluid text-white "  >
+    <div class="row "  >
 
-      <div class=" col-lg-6 col-md-12 col-sm-12 col-12  left     " >
+      <div class=" col-lg-6 col-md-12 col-sm-12 col-12  p-5  " >
 
-        <div class="ms-5 mt-5  ">
+        <div class=" mt-0 ">
 
-          <h4 class="mt-5">The weather</h4>
+          <h4 class="mt-0 hed2">The weather</h4>
         </div>
-        <div class="" >
+        <div class="d-flex" >
 
 
-          <div class=" let mb-5 ms-2 " style="display: flex;">
+          <div class=" let mb-5 mt-5 w-100" >
 
             <div class="sp   ">
-              <h1 class=" hed1 ">16&deg; </h1>
+              <h1 class=" hed1 " id="gg">16&deg; </h1>
             </div>
             <div class="sp">
-              <h2 class="h2 hed2 mt-2">LONDON</h2>
-              <div class="" style="margin-top: px;"><span id="time">00</span> -
+              <h3 class=" mt-2 hed2 ">LONDON</h3>
+              <p class="hed2"><span id="time">00</span> -
                 <span id='time1'>00</span> -
                 <span id='time2'>00</span>
-              </div>
+              </p>
             </div>
             <div class="sp">
 
-              <i class="fa-brands fa-soundcloud fa-4x" style="color: #ffffff;"></i>
-              <div class="mt-1" >
-                <h6 style="font-weight: 800;">partialy cloudy</h6>
+              <i class="fa-brands fa-soundcloud fa-x mb-2" style="color: #ffffff;"></i>
+              <div class="" >
+                <p  class="hed2" >partialy cloudy</p>
               </div>
 
             </div>
@@ -53,12 +53,13 @@
 
 
       <div class=" col-lg-6 col-md-12 col-sm-12 col-12  right">
-        <div class=" p-4  my-4 w-100 ">
+        <div class=" p-4  my-4  ">
            <input type="text" class="form " placeholder="Search Location..."><br>
           <hr class="mt-2 mb-5 bo">
           <h6 class="mt-5">Kochi</h6>
           <h6 class="mt-5">Calicut</h6>
-          <h6 class="my-5">Delhi</h6>
+          <h6 class="mt-5">London</h6>
+          <h6 class="mt-5 mb-4">Delhi</h6>
           <br>
           <hr class="bo mb-5">
           <h6 style="font-weight: 800;" class="mt-4">Weather Details</h6>
@@ -115,6 +116,9 @@
     else {
       time2.innerHTML=t2
     }
+
+    G=document.querySelector('#gg').style
+   
 
   </script>
 </body>
