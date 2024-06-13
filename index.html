@@ -10,29 +10,29 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <title>Document</title>
+  <title>WeatherApp</title>
 </head>
 
 <body>
   <div class="mt-0 w-100 container-fluid text-white "  >
     <div class="row "  >
 
-      <div class=" col-lg-6 col-md-12 col-sm-12 col-12  p-5  " >
+      <div class=" col-lg-6 col-md-12 col-sm-12 col-12  mt-5 " >
 
-        <div class=" mt-0 ">
+        <div class=" mt-4 ps-4">
 
           <h4 class="mt-0 hed2">The weather</h4>
         </div>
         <div class="d-flex" >
 
 
-          <div class=" let mb-5 mt-5 w-100" >
+          <div class=" let  mt-5 w-100  ddd mb-2"  >
 
             <div class="sp   ">
-              <h1 class=" hed1 " id="gg">16&deg; </h1>
+              <h1 class=" hed1 " id="gg">16  </h1>
             </div>
             <div class="sp">
-              <h3 class=" mt-2 hed2 ">LONDON</h3>
+              <h3 class=" mt-2 hed2 " id="Name" >LONDON</h3>
               <p class="hed2"><span id="time">00</span> -
                 <span id='time1'>00</span> -
                 <span id='time2'>00</span>
@@ -42,7 +42,7 @@
 
               <i class="fa-brands fa-soundcloud fa-x mb-2" style="color: #ffffff;"></i>
               <div class="" >
-                <p  class="hed2" >partialy cloudy</p>
+                <p  class="hed2" id="clim" >partialy cloudy</p>
               </div>
 
             </div>
@@ -51,31 +51,33 @@
         </div>
       </div>
 
-
-      <div class=" col-lg-6 col-md-12 col-sm-12 col-12  right">
-        <div class=" p-4  my-4  ">
-           <input type="text" class="form " placeholder="Search Location..."><br>
+      <div class=" col-lg-6 col-md-12 col-sm-12 col-12  right p-2">
+        <div class=" px-4  mt-5   ">
+           <div class="mt-0 w-50 d-flex "> 
+            <input id="sea" type="text" class="form ms-2 form-control me-2" placeholder="Search Location...">
+            <button class="btn btn-secondary" id="but" onclick="fetchdata()"> search</button>
+          </div><br>
           <hr class="mt-2 mb-5 bo">
-          <h6 class="mt-5">Kochi</h6>
-          <h6 class="mt-5">Calicut</h6>
-          <h6 class="mt-5">London</h6>
-          <h6 class="mt-5 mb-4">Delhi</h6>
+          <h6 class="mt-5" id="a">Kochi</h6>
+          <h6 class="mt-5" id="b">Calicut</h6>
+         
+          <h6 class="mt-5 mb-4" id="c">Delhi</h6>
           <br>
-          <hr class="bo mb-5">
+          <hr class="bo mb-4">
           <h6 style="font-weight: 800;" class="mt-4">Weather Details</h6>
           <div class="mt-5" style="font-weight: 600;">
 
             <div class="d-flex justify-content-between">
-              <div>Cloudy</div>
-              <div>00%</div>
+              <div >Cloudy</div>
+              <div id="aa">00%</div>
             </div>
             <div class="d-flex justify-content-between mt-5">
               <div>Humidity</div>
-              <div>00%</div>
+              <div id="ab">00%</div>
             </div>
             <div class="d-flex justify-content-between mt-5">
               <div>Wind</div>
-              <div>00%</div>
+              <div id="ac">00%</div>
             </div>
 
 
@@ -85,24 +87,19 @@
 
     </div>
   </div>
-
-
   <script>
     time = document.querySelector('#time')
     time1 = document.querySelector('#time1')
     time2 = document.querySelector('#time2')
-
     t = new Date().getUTCDate()
-    t1 = new Date().getUTCMonth() + 1
+    t1 = new Date().getUTCMonth() +1
     t2 = new Date().getUTCFullYear()
-
     if (t < 10) {
       time.innerHTML = '0' + t
     }
     else {
       time.innerHTML=t
     }
-
     if (t1< 10) {
       time1.innerHTML = '0' + t1
     }
@@ -116,9 +113,64 @@
     else {
       time2.innerHTML=t2
     }
-
-    G=document.querySelector('#gg').style
    
+    
+
+
+    
+   function fetchdata()
+    {
+      place=sea.value
+     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${place}&appid=5b4bee0ba241d092159faf007e166080`)
+    .then(io=>io.json())
+    .then(out=>display(out))
+    
+   
+    
+  }
+   
+   function display(Arrayout){
+   
+
+    deg=document.querySelector('#gg')
+    Name.innerHTML=Arrayout['name']
+   deg.innerHTML= Math.round(Arrayout['main'].temp -273.15)+`<sup style="font-weight: 100; " >°c </sup>`
+   clim.innerHTML=Arrayout["weather"][0].main
+   aa.innerHTML=Arrayout["clouds"].all+`%`
+    ab.innerHTML=Arrayout["main"].humidity+`%`
+     ac.innerHTML=Arrayout["wind"].speed+`ms`
+
+
+
+
+
+   c.innerHTML = 'malappuram'
+   b.innerHTML = 'ooty'
+   c.innerHTML = b.innerHTML
+   b.innerHTML = a.innerHTML
+   a.innerHTML=Name.innerHTML
+
+   function fun()
+   {
+    sea.value=b.innerHTML
+   }
+   function func()
+   {
+    sea.value=c.innerHTML
+    
+   }
+
+   b.addEventListener("click",fun)
+   c.addEventListener("click",func)
+   
+
+   }
+
+   
+  
+
+   
+   //
 
   </script>
 </body>

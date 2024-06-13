@@ -2,40 +2,42 @@ body{
   background-image: url(images/ddd.jpg);
   background-repeat: no-repeat;
   background-size: cover;
- opacity: 0.8;
+ opacity: 1;
   margin: 0px;
   overflow-x: hidden;
  
 }
 .right{
-  background-color: rgba(181, 174, 174, 0.06);
+  background-color: rgba(137, 136, 136, 0.134);
   
 }
 
 .let{
   display: flex;
  align-items: last baseline;
- justify-content: center;
-  font-weight: 500;
+ 
+  font-weight: 300;
+  
   color: rgb(233, 227, 227);
 
 }
 .hed1{
-  font-size: 120px;
+  font-size: 140px;
 }
 .hed2{
-  font-size: 20px;
+  font-size: 24px;
+  font-weight: 500;
 }
 
 .sp{
-  margin-left:13px ;
+  margin-left:25px ;
  
 }
 .form{
-  outline: none;
-  border: none; 
-background:none ;
- color: azure;
+  
+   border: none;
+
+ color: rgb(15, 15, 15);
 
 }
 .bo{
@@ -46,19 +48,79 @@ input::placeholder{
   color:rgb(229, 219, 219);
   font-weight: 500;
 }
-
+.ddd{
+  height: 560px ;
+}
 @media( max-width:500px ) {
 
   .hed1{
 
-    font-size: 36px;
+    font-size: 40px;
     font-weight: 100;
   }
   .hed2{
 
-    font-size: 8px;
-    font-weight: 100;
+    font-size: 10px;
+    font-weight: 500;
   }
   
-
+.ddd{
+  height: 20px;
 }
+}
+
+sup{
+  font-size: 40px;
+}
+@media( max-width:680px ) {
+
+  .hed1{
+
+    font-size: 40px;
+    font-weight: 500;
+    
+  }
+  sup{
+    font-size: 20px;
+  }
+  .hed2{
+
+    font-size: 15px;
+    
+    font-weight: 500;
+  }
+  
+.ddd{
+  height: 50px;
+  
+}
+}
+
+
+@media( max-width:400px ) {
+
+  .hed1{
+
+    font-size: 30px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    
+  }
+  sup{
+    font-size: 15px;
+  }
+
+  .hed2{
+
+    font-size: 6px;
+    font-weight: 500;
+  }
+  
+.ddd{
+  height: 10px;
+}
+}
+
+
+
